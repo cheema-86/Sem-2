@@ -118,7 +118,7 @@ void inorder(struct node * item){
 int main(){
     struct node * root;
 
-    int input, toSearch;
+    int input;
 
     printf("Enter root node: ");
     scanf("%d", &input);
@@ -143,13 +143,14 @@ int main(){
     printf("\n\nDisplay   inorder:  ");
     inorder(root);
 
-
-    printf("\n\nEnter item to delete: ");
-    scanf("%d", &toSearch);
-
-
-    delete(root,toSearch);
-
+    while (1){
+        printf("Enter item to delete: ");
+        scanf("%d", &input);
+        if (input == -1){
+            break;
+        }
+        delete(root, input);
+    }
 
     printf("\n\nDisplay  preorder:  ");
     pre(root);
