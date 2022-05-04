@@ -39,29 +39,30 @@ struct node * insert(struct node* current, int item){
 struct node* min(struct node* node){
     struct node* current = node;
 
-    while (current && current->left != NULL)
+    while (current != NULL && current->left != NULL){
         current = current->left;
- 
+    }
+
     return current;
 }
  
  
 struct node* delete(struct node* root, int item){
-    if (root == NULL)
+    if (root == NULL){
         return root;
- 
+    }
+
     if (item < root->data){
-        root->left = deleteNode(root->left, item);
+        root->left = delete(root->left, item);
     } else if (item > root->data){
-        root->right = deleteNode(root->right, item);
+        root->right = delete(root->right, item);
     } else {
 
         if (root->left == NULL) {
             struct node* temp = root->right;
             free(root);
             return temp;
-        }
-        else if (root->right == NULL) {
+        } else if (root->right == NULL) {
             struct node* temp = root->left;
             free(root);
             return temp;
@@ -71,7 +72,7 @@ struct node* delete(struct node* root, int item){
 
         root->data = temp->data;
 
-        root->right = deleteNode(root->right, temp->data);
+        root->right = delete(root->right, temp->data);
     }
     return root;
 }
