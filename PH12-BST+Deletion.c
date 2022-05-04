@@ -36,6 +36,7 @@ struct node * insert(struct node* current, int item){
 
 }
 
+/*
 struct node * search(struct node* current, int item){
     struct node * newnode;
 
@@ -87,6 +88,7 @@ void delete(struct node* root, int item){
 
 
 }
+*/
 
 // array to check 15 13 9 7 11 14 17 16 25 29 -1 29
 
