@@ -46,7 +46,7 @@ struct node* min(struct node* node){
 }
  
  
-struct node* deleteNode(struct node* root, int item){
+struct node* delete(struct node* root, int item){
     if (root == NULL)
         return root;
  
@@ -75,62 +75,6 @@ struct node* deleteNode(struct node* root, int item){
     }
     return root;
 }
-
-/*
-struct node * search(struct node* current, int item){
-    struct node * newnode;
-
-    if (current == NULL){
-        printf("Not found");
-        return 0;
-    } else if(current-> data < item){
-        if(current->right->data == item){
-            return current;
-        }
-        newnode = search(current->right, item);
-    } else if (current-> data > item){
-        if(current->left->data == item){
-            return current;
-        }
-        newnode = search(current->left, item);
-    } else {
-        printf("Unexpected error");
-        return 0;
-    }
-    return newnode;
-}
-
-void delete(struct node* root, int item){
-    struct node * parent, * child;
-
-    parent = search(root, item);
-
-    if (parent->left != NULL && parent->left->data == item){
-        child = parent->left;
-    } else if(parent->right != NULL && parent->right->data == item){
-        child = parent->right;
-    } else {
-        printf("Search algo broken");
-    }
-
-    //Check number of childeren for the node to be deleted
-
-    if (child->left == NULL && child->right == NULL){
-        //the node has no children
-        free(child); 
-    } else if (child->left != NULL && child->right != NULL){
-        printf("Deleting nodes with 2 children not supported yet");
-    } else if(child->left == NULL){
-        child = child->right;
-    } else {
-        child = child->left;
-    }
-
-
-}
-*/
-
-// array to check 15 13 9 7 11 14 17 16 25 29 -1 29
 
 void pre(struct node * item){
     printf("%d ",item->data);
