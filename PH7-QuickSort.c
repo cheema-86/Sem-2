@@ -9,7 +9,7 @@ void quicksort(int pivot, int stop){
         while (start <= end){
             if (arr[start] <= arr[pivot]){
                 start++;
-            } else if (arr[end] >= arr[stop]){
+            } else if (arr[end] > arr[pivot]){
                 end--;
             } else {
                 temp = arr[start];
