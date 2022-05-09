@@ -19,8 +19,7 @@ struct node * insert(struct node *head){
     return head;
 }
 
-void display(struct node *temp, int i){
-    printf("\nNeighbours of %d: ",i+1);
+void display(struct node *temp){
     while (temp != 0){
         printf("%d ", temp->data); 
         if(temp->next == NULL){break;}
@@ -48,7 +47,8 @@ int main(){
 
     printf("\n\n\n--Graph--\n");
     for(i = 0; i<items; i++){
-        display(nodeList[i], i);
+        printf("\nNeighbours of %d: ",i+1);
+        display(nodeList[i]);
     }
 
     return 0;
